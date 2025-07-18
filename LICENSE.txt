@@ -1,0 +1,16 @@
+BD Dynamic Pricing Pro – End User License Agreement (EULA)
+
+Copyright (c) Buene Data – All Rights Reserved
+
+By installing or using this plugin, you agree to the following terms:
+
+1. This plugin is sold as a one-time purchase for lifetime use.
+2. You are allowed to install and use the plugin on unlimited websites that you own or manage.
+3. You may not resell, redistribute, sublicense, or include this plugin in commercial plugin bundles.
+4. You may not remove any attribution to Buene Data from the plugin code or interface.
+5. Support and updates are provided at the discretion of Buene Data.
+6. The plugin is provided "as is" without warranty of any kind.
+
+All rights reserved – Buene Data, Norway  
+https://buenedata.no  
+kristoffer@buenedata.no
