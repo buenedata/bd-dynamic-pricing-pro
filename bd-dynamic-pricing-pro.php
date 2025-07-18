@@ -1,11 +1,15 @@
 <?php
 /**
  * Plugin Name: BD Dynamic Pricing Pro
- * Plugin URI: https://buenedata.no/produkter/plugins/bd-dynamic-pricing
+ * Plugin URI: https://github.com/buenedata/bd-dynamic-pricing-pro
  * Description: Fullversjon av BD Dynamic Pricing med støtte for kampanjer, rabatter og lisensbasert tilgang. <span style="color: red;"><strong>Kjøp Pro versjon i dag!</strong></span>
- * Version: 1.1
+ * Version: 1.2
  * Author: Buene Data
  * Author URI: https://buenedata.no
+ * Text Domain: bd-dynamic-pricing-pro
+ * Domain Path: /languages
+ * GitHub Plugin URI: buenedata/bd-dynamic-pricing-pro
+ * Primary Branch: main
  */
 
 
@@ -18,21 +22,11 @@ require_once plugin_dir_path(__FILE__) . 'includes/logic.php';
 register_activation_hook(__FILE__, 'bd_dp_create_table');
 
 require_once plugin_dir_path(__FILE__) . 'includes/apply-rules.php';
+require_once plugin_dir_path(__FILE__) . 'includes/github-updater.php';
 
-// GitHub Updater integration
+// Initialize GitHub updater
 if (is_admin()) {
-    require_once plugin_dir_path(__FILE__) . 'includes/plugin-update-checker/plugin-update-checker.php';
-
-    if (class_exists('Puc_v5p6_Factory')) {
-        $myUpdateChecker = Puc_v5p6_Factory::buildUpdateChecker(
-            'https://github.com/buenedata/bd-dynamic-pricing-pro/',
-            __FILE__,
-            'bd-dynamic-pricing-pro'
-        );
-        $myUpdateChecker->setBranch('main');
-    } else {
-        error_log('Puc_v5p6_Factory not found. Plugin update checker not loaded.');
-    }
+    new BD_Dynamic_Pricing_GitHub_Updater(__FILE__, 'buenedata', 'bd-dynamic-pricing-pro');
 }
 
 add_filter('plugin_row_meta', 'bd_dp_pro_plugin_meta_links', 10, 2);
