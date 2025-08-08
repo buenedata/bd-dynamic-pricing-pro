@@ -69,3 +69,17 @@ debug.log
 
 # Cache files
 .cache/
+
+# Development and debug files (production cleanup)
+BD-*.txt
+DEBUG-*.md
+DEPLOYMENT-*.md
+GITHUB-*.md
+PRIVATE-*.md
+QUICK-*.md
+TESTING-*.md
+SUCCESS-*.md
+test-updater.php
+
+# GitHub workflow temp files
+.github/temp/

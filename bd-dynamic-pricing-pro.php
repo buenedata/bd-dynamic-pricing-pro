@@ -3,7 +3,7 @@
  * Plugin Name: BD Dynamic Pricing Pro
  * Plugin URI: https://github.com/buenedata/bd-dynamic-pricing-pro
  * Description: Fullversjon av BD Dynamic Pricing med støtte for kampanjer, rabatter og lisensbasert tilgang. <span style="color: red;"><strong>Kjøp Pro versjon i dag!</strong></span>
- * Version: 1.4
+ * Version: 1.5.0
  * Author: Buene Data
  * Author URI: https://buenedata.no
  * Update URI: https://github.com/buenedata/bd-dynamic-pricing-pro
@@ -21,7 +21,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Plugin constants
-define('BD_DYNAMIC_PRICING_PRO_VERSION', '1.4');
+define('BD_DYNAMIC_PRICING_PRO_VERSION', '1.5.0');
 define('BD_DYNAMIC_PRICING_PRO_FILE', __FILE__);
 define('BD_DYNAMIC_PRICING_PRO_PATH', plugin_dir_path(__FILE__));
 define('BD_DYNAMIC_PRICING_PRO_URL', plugin_dir_url(__FILE__));
@@ -30,7 +30,7 @@ define('BD_DYNAMIC_PRICING_PRO_BASENAME', plugin_basename(__FILE__));
 // Initialize updater
 if (is_admin()) {
     require_once BD_DYNAMIC_PRICING_PRO_PATH . 'includes/class-bd-updater.php';
-    new BD_Plugin_Updater(BD_DYNAMIC_PRICING_PRO_FILE, 'buenedata', 'bd-dynamic-pricing-pro');
+    new BD_Dynamic_Pricing_Pro_Updater(BD_DYNAMIC_PRICING_PRO_FILE, 'buenedata', 'bd-dynamic-pricing-pro');
 }
 
 // Load core files
