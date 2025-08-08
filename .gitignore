@@ -37,3 +37,35 @@ ehthumbs.db
 # Temporary files
 tmp/
 temp/
+
+# PHP/Composer
+vendor/
+composer.lock
+composer.phar
+
+# Environment files
+.env
+.env.local
+.env.production
+
+# Development files
+*.swp
+*.swo
+*~
+
+# Build artifacts
+dist/
+build/
+assets/build/
+
+# IDE files
+*.sublime-project
+*.sublime-workspace
+
+# Log files
+error_log
+debug.log
+*.log
+
+# Cache files
+.cache/

@@ -3,32 +3,44 @@
  * Plugin Name: BD Dynamic Pricing Pro
  * Plugin URI: https://github.com/buenedata/bd-dynamic-pricing-pro
  * Description: Fullversjon av BD Dynamic Pricing med støtte for kampanjer, rabatter og lisensbasert tilgang. <span style="color: red;"><strong>Kjøp Pro versjon i dag!</strong></span>
- * Version: 1.3
+ * Version: 1.4
  * Author: Buene Data
  * Author URI: https://buenedata.no
+ * Update URI: https://github.com/buenedata/bd-dynamic-pricing-pro
+ * Requires at least: 5.0
+ * Tested up to: 6.4
+ * Requires PHP: 7.4
+ * Network: false
  * Text Domain: bd-dynamic-pricing-pro
  * Domain Path: /languages
- * GitHub Plugin URI: buenedata/bd-dynamic-pricing-pro
- * Primary Branch: main
  */
 
+// Prevent direct access
+if (!defined('ABSPATH')) {
+    exit;
+}
 
-defined('ABSPATH') or die('No script kiddies please!');
+// Plugin constants
+define('BD_DYNAMIC_PRICING_PRO_VERSION', '1.4');
+define('BD_DYNAMIC_PRICING_PRO_FILE', __FILE__);
+define('BD_DYNAMIC_PRICING_PRO_PATH', plugin_dir_path(__FILE__));
+define('BD_DYNAMIC_PRICING_PRO_URL', plugin_dir_url(__FILE__));
+define('BD_DYNAMIC_PRICING_PRO_BASENAME', plugin_basename(__FILE__));
 
-require_once plugin_dir_path(__FILE__) . 'includes/database.php';
-require_once plugin_dir_path(__FILE__) . 'bd-menu-helper.php';
-require_once plugin_dir_path(__FILE__) . 'includes/admin-ui.php';
-require_once plugin_dir_path(__FILE__) . 'includes/logic.php';
+// Initialize updater
+if (is_admin()) {
+    require_once BD_DYNAMIC_PRICING_PRO_PATH . 'includes/class-bd-updater.php';
+    new BD_Plugin_Updater(BD_DYNAMIC_PRICING_PRO_FILE, 'buenedata', 'bd-dynamic-pricing-pro');
+}
+
+// Load core files
+require_once BD_DYNAMIC_PRICING_PRO_PATH . 'includes/database.php';
+require_once BD_DYNAMIC_PRICING_PRO_PATH . 'bd-menu-helper.php';
+require_once BD_DYNAMIC_PRICING_PRO_PATH . 'includes/admin-ui.php';
+require_once BD_DYNAMIC_PRICING_PRO_PATH . 'includes/logic.php';
+require_once BD_DYNAMIC_PRICING_PRO_PATH . 'includes/apply-rules.php';
 
 register_activation_hook(__FILE__, 'bd_dp_create_table');
-
-require_once plugin_dir_path(__FILE__) . 'includes/apply-rules.php';
-require_once plugin_dir_path(__FILE__) . 'includes/github-updater.php';
-
-// Initialize GitHub updater
-if (is_admin()) {
-    new BD_Dynamic_Pricing_GitHub_Updater(__FILE__, 'buenedata', 'bd-dynamic-pricing-pro');
-}
 
 add_filter('plugin_row_meta', 'bd_dp_pro_plugin_meta_links', 10, 2);
 
