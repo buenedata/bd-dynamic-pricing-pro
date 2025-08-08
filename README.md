@@ -26,7 +26,7 @@ Se `GITHUB_SETUP.md` for detaljert informasjon om hvordan du setter opp GitHub r
 
 ## Versjonsinformasjon
 
-Nyeste versjon: 1.2.0
+Nyeste versjon: 1.3.0
 
 Se `CHANGELOG.md` for fullstendig versjonhistorikk.
 
