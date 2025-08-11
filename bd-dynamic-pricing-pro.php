@@ -3,7 +3,7 @@
  * Plugin Name: BD Dynamic Pricing Pro
  * Plugin URI: https://github.com/buenedata/bd-dynamic-pricing-pro
  * Description: Fullversjon av BD Dynamic Pricing med støtte for kampanjer, rabatter og lisensbasert tilgang. <span style="color: red;"><strong>Kjøp Pro versjon i dag!</strong></span>
- * Version: 1.5.1
+ * Version: 1.5.2
  * Author: Buene Data
  * Author URI: https://buenedata.no
  * Update URI: https://github.com/buenedata/bd-dynamic-pricing-pro
@@ -21,7 +21,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Plugin constants
-define('BD_DYNAMIC_PRICING_PRO_VERSION', '1.5.1');
+define('BD_DYNAMIC_PRICING_PRO_VERSION', '1.5.2');
 define('BD_DYNAMIC_PRICING_PRO_FILE', __FILE__);
 define('BD_DYNAMIC_PRICING_PRO_PATH', plugin_dir_path(__FILE__));
 define('BD_DYNAMIC_PRICING_PRO_URL', plugin_dir_url(__FILE__));
