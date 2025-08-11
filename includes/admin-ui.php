@@ -286,8 +286,7 @@ function bd_dp_render_admin_page() {
                                     });
                                 });
                                 </script>
-                                <?php
-                            }
+                                <?php endforeach; ?>
                                 <div class="bd-campaign-details">
                                     <div class="bd-campaign-info">
                                         <div class="bd-info-item">
